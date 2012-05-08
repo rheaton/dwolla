@@ -25,6 +25,10 @@ gem install dwolla
 * Send and Request Transactions with Other Id types (Facebook, Twitter, Email, or Phone.)
 
 ## Usage
+To hit the test endpoint:
+```ruby
+  Dwolla.test_mode = true
+```
 
 #### Users API
 

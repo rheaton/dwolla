@@ -11,7 +11,7 @@ describe Dwolla::Transaction do
                    :destinationId => '2',
                    :oauth_token => '1' }
 
-      stub_post('/transactions/send').with(:body => MultiJson.encode(@payload)).to_return(
+      stub_post('/send').with(:body => MultiJson.encode(@payload)).to_return(
         :body => fixture('send_transaction.json'))
     end
 
@@ -23,7 +23,7 @@ describe Dwolla::Transaction do
                                             :pin => '1234')
       transaction.execute
 
-      a_post('/transactions/send').
+      a_post('/send').
         with(:body => MultiJson.encode(@payload)).should have_been_made
     end
 
@@ -49,7 +49,7 @@ describe Dwolla::Transaction do
                    :sourceId => '2',
                    :oauth_token => '1' }
 
-      stub_post('/transactions/request').with(:body => MultiJson.encode(@payload)).to_return(
+      stub_post('/request').with(:body => MultiJson.encode(@payload)).to_return(
         :body => fixture('request_transaction.json'))
     end
 
@@ -61,7 +61,7 @@ describe Dwolla::Transaction do
                                             :pin => '1234')
       transaction.execute
 
-      a_post('/transactions/request').
+      a_post('/request').
         with(:body => MultiJson.encode(@payload)).should have_been_made
     end
 

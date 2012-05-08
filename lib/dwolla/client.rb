@@ -7,7 +7,9 @@ module Dwolla
     end
 
     def user(id)
-      user_attributes_hash = get("users/#{id}")
+      # new API endpoint -RH
+      # user_attributes_hash = get("users/#{id}")
+      user_attributes_hash = get("accountinformation/#{id}")
       User.new(user_attributes_hash)
     end
 

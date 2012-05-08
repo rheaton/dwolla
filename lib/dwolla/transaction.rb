@@ -2,8 +2,11 @@ module Dwolla
   class Transaction
     include Dwolla::Connection
 
-    ENDPOINTS = { :send => 'transactions/send',
-                  :request => 'transactions/request' }
+    # new API endpoint -RH
+    # ENDPOINTS = { :send => 'transactions/send',
+                  # :request => 'transactions/request' }
+    ENDPOINTS = { :send => 'send',
+                  :request => 'request' }
 
     attr_accessor :origin, :destination, :type, :amount, :pin, :id, :source
 

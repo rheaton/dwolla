@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = Dwolla::VERSION
   s.authors     = ["Jefferson Girao"]
   s.email       = ["contato@jefferson.eti.br"]
-  s.homepage    = "https://github.com/jeffersongirao/dwolla"
-  s.summary     = %q{A Ruby wrapper for the Dwolla API.}
-  s.description = %q{A Ruby wrapper for the Dwolla API.}
+  s.homepage    = "https://github.com/rheaton/dwolla"
+  s.summary     = %q{A Ruby wrapper for the deprecated Dwolla API.}
+  s.description = %q{A Ruby wrapper for the Dwolla API- this will be updated the current API once there is a test mode. (Rachel Heaton)}
 
   s.rubyforge_project = "dwolla"
 

@@ -23,9 +23,23 @@ module Dwolla
     @@debug = debug
   end
 
+  def self.test_mode
+    @@test_mode
+  end
+
+  def self.test_mode=(test_mode)
+    @@test_mode = test_mode
+    if test_mode
+      self.endpoint = "https://www.dwolla.com/oauth/rest/testapi"
+    else
+      self.endpoint = "https://www.dwolla.com/oauth/rest/accountapi"
+    end
+  end
+
   self.debug = false
   self.user_agent = "Dwolla Ruby Wrapper"
-  self.endpoint = "https://www.dwolla.com/oauth/rest"
+  self.test_mode = false
+  self.endpoint = "https://www.dwolla.com/oauth/rest/accountapi"
 end
 
 require 'faraday'
